@@ -14,6 +14,8 @@ public class ConverterTest {
     @Rule
     public ExpectedException exception = ExpectedException.none();
 
+    private Converter converter = new Converter();
+
     @Test
     public void toUnsignedInt_ShouldThrowException_WhenStringContainsDecimal() throws Converter.CalculateException {
         String[] inputs = new String[] {
@@ -24,7 +26,7 @@ public class ConverterTest {
         };
         for (String input : inputs) {
             exception.expectMessage("Number cannot contain a decimal: " + input);
-            Converter.toUnsignedInt(input);
+            converter.toUnsignedInt(input);
         }
     }
 
@@ -37,7 +39,7 @@ public class ConverterTest {
         };
         for (String input : inputs) {
             exception.expectMessage("Number cannot contain a dash: " + input);
-            Converter.toUnsignedInt(input);
+            converter.toUnsignedInt(input);
         }
     }
 
@@ -51,7 +53,7 @@ public class ConverterTest {
         };
         for (String input : inputs) {
             exception.expectMessage("Number cannot contain a underscore: " + input);
-            Converter.toUnsignedInt(input);
+            converter.toUnsignedInt(input);
         }
     }
 
@@ -65,7 +67,7 @@ public class ConverterTest {
         };
         for (String input : inputs) {
             exception.expectMessage("Number cannot contain a comma: " + input);
-            Converter.toUnsignedInt(input);
+            converter.toUnsignedInt(input);
         }
     }
 
@@ -79,7 +81,7 @@ public class ConverterTest {
         };
         for (String input : inputs) {
             exception.expectMessage("Number cannot be longer than 3 digits: " + input);
-            Converter.toUnsignedInt(input);
+            converter.toUnsignedInt(input);
         }
     }
 
@@ -92,7 +94,7 @@ public class ConverterTest {
                 new Utils.Pair<>("17", 17)
         );
         for (Utils.Pair<String, Integer> pair : inputs) {
-            int output = Converter.toUnsignedInt(pair.getKey());
+            int output = converter.toUnsignedInt(pair.getKey());
             assertEquals(pair.getValue().intValue(), output);
         }
     }
