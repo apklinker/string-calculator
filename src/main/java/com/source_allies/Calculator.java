@@ -2,11 +2,13 @@ package com.source_allies;
 
 public class Calculator {
 
-    public int sum(String input) {
+    private Converter converter = new Converter();
+
+    public int sum(String input) throws Converter.CalculateException {
         if (input == null) {
             return 0;
         } else {
-            return 4;
+            return converter.toUnsignedInt(input);
         }
     }
 
