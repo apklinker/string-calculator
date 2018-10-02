@@ -4,12 +4,12 @@ public class Calculator {
 
     private Converter converter = new Converter();
 
-    public int sum(String input) throws Converter.CalculateException {
-        if (input == null) {
-            return 0;
-        } else {
-            return converter.toUnsignedInt(input);
+    public int sum(String ... input) throws Converter.CalculateException {
+        int sum = 0;
+        for (String number : input) {
+            sum += converter.toUnsignedInt(number);
         }
+        return sum;
     }
 
 }
