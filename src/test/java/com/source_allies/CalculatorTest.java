@@ -20,7 +20,14 @@ public class CalculatorTest {
     @Test
     public void sum_ShouldReturnZero_WhenInputIsEmpty() {
         int expected = 0;
-        int actual = calculator.sum();
+        int actual = calculator.sum(null);
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void sum_ShouldReturnInput_WhenInputIsOneLong() {
+        int expected = 4;
+        int actual = Calculator.sum("4");
         assertEquals(actual, expected);
     }
 
