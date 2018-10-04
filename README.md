@@ -20,7 +20,7 @@ Should compute the sum of an array of numbers, each represented in a string.
 ###### Business Requirements
 1. When there are no inputs, **return `0`**
     - `sum([]) = 0`
-1. When there are one inputs, **return that number**
+1. When there is one input, **return that number**
     - `sum(["2"]) = 2`
     - `sum(["17"]) = 17`
 1. When there are two or more inputs, **return the sum**
@@ -31,4 +31,4 @@ Should compute the sum of an array of numbers, each represented in a string.
     - `sum(["4", ".25", "9"]) = !!CalculationException`
     - `sum(["_", "7"]) = !!CalculationException`
     - `sum([","]) = !!CalculationException`
-    - `sum(["20", "3", "918"]) = !!CalculationException`
+    - `sum(["20", "3", "9108"]) = !!CalculationException`
